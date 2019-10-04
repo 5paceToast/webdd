@@ -1,0 +1,10 @@
+/webdd
+*.dll
+*.dylib
+*.exe
+*.exe~
+*.so
+
+*.gz
+*.out
+*.test

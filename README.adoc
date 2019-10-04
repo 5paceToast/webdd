@@ -1,0 +1,61 @@
+= WebDD: Web Development Daemon
+Chloe Kudryavtsev <toast@toast.cafe>
+v0.1.0, 2019-10-04
+
+WebDD is a high performance static webserver intended for development usage.
+
+== Install
+[source, shell]
+go get -u toast.cafe/x/webdd
+
+== Quickstart
+[source, shell]
+----
+webd <1>
+webd -dir=/some/dir <2>
+----
+<1> Serve the current directory
+<2> Serve /some/dir
+
+Read further for details on all the available preprocessing and how to enable/disable them.
+
+== Details
+=== Middlewares
+Asciidoc:: Uses https://github.com/bytesparadise/libasciidoc[libasciidoc] to pre-render asciidoc files.
+Will handle `.html` and `.adoc` extensions automatically.
+Controlled by the `-asciidoc` flag.
+Enabled by default.
+Log:: Logs every request.
+Controlled by the `-log` and `-loglevel` flags (uses https://github.com/sirupsen/logrus[logrus] by default).
+Enabled by default.
+Markdown:: Uses https://github.com/yuin/goldmark[goldmark] to pre-render markdown files.
+Will handle `.html` and `.md` extensions automatically.
+Controlled by the `-markdown` flag.
+Enabled by default.
+Safe:: Sanitizes all requests.
+May be either expanded or dropped later (see current sources).
+Controlled by the `-safe` flag.
+Disabled by default.
+
+=== Other Flags
+`-directory`:: Changes which directly is served from the current one.
+
+== Performance
+Significant effort is put into making WebDD as fast and simple as possible.
+Official benchmarks will not be published until the 1.0 release (I'm still in the process of optimizing and refining the UX).
+However, preliminary benchmarks suggest up to 20x the performance of darkhttpd and up to 8x the performance of sthttpd.
+
+== Further Goals
+- CSS preprocessing
+- JSON preprocessing
+- ECMAScript preprocessing (including languages that compile to ECMAScript)
+- LiveReload injection (under consideration)
+
+=== Requirements
+Any further development must not incur runtime dependencies.
+Low performance is acceptable in the scenario of a middleware being triggered, but not otherwise.
+Any go modules used should be GO111MODULEs compatible.
+
+== Non-Goals
+- Routes
+- Proxying
