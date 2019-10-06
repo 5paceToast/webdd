@@ -2,6 +2,7 @@
 Chloe Kudryavtsev <toast@toast.cafe>
 v0.1.0, 2019-10-04
 
+image::https://cloud.drone.io/api/badges/5paceToast/webdd/status.svg[link=https://cloud.drone.io/5paceToast/webdd]
 WebDD is a high performance static webserver intended for development usage.
 
 == Install
