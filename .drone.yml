@@ -1,0 +1,30 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: golang:alpine
+  commands:
+  - go build -v -o webdd
+
+- name: test
+  image: golang:alpine
+  commands:
+  - go test -v ./...
+
+- name: deploy
+  image: plugins/s3
+  settings:
+    source: webdd
+    target: "/${DRONE_REPO_NAME}"
+    bucket: cicd
+    access_key: cicd
+    secret_key:
+      from_secret: s3_key
+    path_style: true
+    endpoint: https://minio.toast.cafe
+  when:
+    branch:
+    - master
+    event:
+    - push
