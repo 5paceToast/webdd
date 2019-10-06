@@ -10,6 +10,7 @@ steps:
 - name: test
   image: golang:alpine
   commands:
+  - apk add --no-cache gcc
   - go test -v ./...
 
 - name: deploy
