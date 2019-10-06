@@ -9,9 +9,10 @@ WebDD is a high performance static webserver intended for development usage.
 === Package (amd64 only)
 [source, shell]
 ----
-wget https://minio.toast.cafe/cicd/webdd/webdd
+wget https://minio.toast.cafe/cicd/webdd/webdd-$OS-$ARCH -o webdd <1>
 chmod +x webdd
 ----
+<1> Replace OS with your OS (e.g "windows") and ARCH with your architecture (e.g "amd64")
 
 === Go
 [source, shell]
