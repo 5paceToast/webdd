@@ -5,6 +5,14 @@ v0.1.0, 2019-10-04
 WebDD is a high performance static webserver intended for development usage.
 
 == Install
+=== Package (amd64 only)
+[source, shell]
+----
+wget https://minio.toast.cafe/cicd/webdd/webdd
+chmod +x webdd
+----
+
+=== Go
 [source, shell]
 go get -u toast.cafe/x/webdd
 
