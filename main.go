@@ -40,7 +40,7 @@ func main() {
 		"safe":      util.S.Safe,
 	}).Trace("compiled settings")
 
-	// Prepare Middlewares
+	// ---- Prepare Middlewares
 	var md []middleware.Middleware
 	if util.S.Safe {
 		md = append(md, middleware.Safe)

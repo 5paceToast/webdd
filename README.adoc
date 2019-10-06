@@ -11,8 +11,8 @@ go get -u toast.cafe/x/webdd
 == Quickstart
 [source, shell]
 ----
-webd <1>
-webd -dir=/some/dir <2>
+webdd <1>
+webdd -dir=/some/dir <2>
 ----
 <1> Serve the current directory
 <2> Serve /some/dir
