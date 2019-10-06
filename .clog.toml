@@ -1,0 +1,7 @@
+[clog]
+repository = "https://github.com/5paceToast/webdd"
+subtitle = "Web Development Daemon"
+changelog = "CHANGELOG"
+
+[sections]
+Chores = ["chore"]
