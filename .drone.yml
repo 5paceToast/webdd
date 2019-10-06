@@ -5,8 +5,8 @@ common: &common
   image: golang:alpine
   commands:
   - apk add --no-cache binutils
-  - go build -v -o "webdd-${GOOS}-${GOARCH}"
-  - strip "webdd-${GOOS}-${GOARCH}"
+  - go build -v -o "webdd-$${GOOS}-$${GOARCH}"
+  - strip "webdd-$${GOOS}-$${GOARCH}"
 
 steps:
 - name: build-linux-amd64
