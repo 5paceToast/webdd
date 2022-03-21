@@ -9,8 +9,7 @@ require (
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/sergi/go-diff v1.0.0 // indirect
 	github.com/sirupsen/logrus v1.4.2
-	github.com/valyala/fasthttp v1.5.0
+	github.com/valyala/fasthttp v1.34.0
 	github.com/yuin/goldmark v1.1.0
-	golang.org/x/net v0.0.0-20191003171128-d98b1b443823 // indirect
 	gopkg.in/yaml.v2 v2.2.4 // indirect
 )
